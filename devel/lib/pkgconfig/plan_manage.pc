@@ -1,0 +1,8 @@
+prefix=/home/yunlong/projects/exploration/RACER/devel
+
+Name: plan_manage
+Description: Description of plan_manage
+Version: 0.0.0
+Cflags: -I/home/yunlong/projects/exploration/RACER/src/swarm_exploration/plan_manage/include
+Libs: -L${prefix}/lib -lplan_manage
+Requires: plan_env path_searching bspline bspline_opt active_perception traj_utils
