@@ -1,4 +1,7 @@
 *.atsp
 *.par
 *.tour
+**/*.atsp
+**/*.par
+**/*.tour
 .vscode/
