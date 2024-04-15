@@ -46,10 +46,20 @@ Please kindly star :star: this project if it helps you. We take great efforts to
 
 ## Quick Start
 
-This project has been tested on Ubuntu 16.04(ROS Kinetic) and 18.04(ROS Melodic). Take Ubuntu 18.04 as an example, run the following commands to install required tools:
+This project has been tested on Ubuntu 20.04(ROS Noetic). Take Ubuntu 20.04 as an example, run the following commands to install required tools:
 
 ```
-  sudo apt-get install libarmadillo-dev ros-melodic-nlopt libelf-dev libdw-dev 
+  sudo apt-get install libarmadillo-dev libelf-dev libdw-dev 
+```
+After that, you need to install Nlopt:
+```
+  git clone https://github.com/stevengj/nlopt.git
+  cd nlopt
+  mkdir build
+  cd build
+  cmake ..
+  make
+  sudo make install
 ```
 After that, you need to install __LKH-3__(LKH-3.0.6 version is recommended) with the following commands. Please make sure the executable file `LKH` is correctly placed at `/usr/local/bin`.
 
@@ -74,7 +84,7 @@ Then simply clone and compile our package (using ssh here):
 
 ```
   cd ${YOUR_WORKSPACE_PATH}/src
-  git clone https://github.com/SYSU-STAR/RACER.git
+  git clone https://github.com/yunlongguo2000/RACER.git
   cd ../ 
   catkin_make
 ```
