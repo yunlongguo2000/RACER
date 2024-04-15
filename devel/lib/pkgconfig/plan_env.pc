@@ -1,8 +1,0 @@
-prefix=/home/yunlong/projects/exploration/RACER/devel
-
-Name: plan_env
-Description: Description of plan_env
-Version: 0.0.0
-Cflags: -I/home/yunlong/projects/exploration/RACER/devel/include -I/home/yunlong/projects/exploration/RACER/src/swarm_exploration/plan_env/include
-Libs: -L${prefix}/lib -lplan_env
-Requires: roscpp std_msgs message_runtime

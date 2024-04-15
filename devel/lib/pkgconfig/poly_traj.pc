@@ -1,8 +1,0 @@
-prefix=/home/yunlong/projects/exploration/RACER/devel
-
-Name: poly_traj
-Description: Description of poly_traj
-Version: 0.0.0
-Cflags: -I/home/yunlong/projects/exploration/RACER/src/swarm_exploration/poly_traj/include
-Libs: -L${prefix}/lib -lpoly_traj
-Requires: 

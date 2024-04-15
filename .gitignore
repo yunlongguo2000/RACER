@@ -5,3 +5,5 @@
 **/*.par
 **/*.tour
 .vscode/
+build/
+devel/

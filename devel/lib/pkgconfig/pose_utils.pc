@@ -1,8 +1,0 @@
-prefix=/home/yunlong/projects/exploration/RACER/devel
-
-Name: pose_utils
-Description: Description of pose_utils
-Version: 0.0.0
-Cflags: -I/home/yunlong/projects/exploration/RACER/src/uav_simulator/Utils/pose_utils/include
-Libs: -L${prefix}/lib -lpose_utils
-Requires: 

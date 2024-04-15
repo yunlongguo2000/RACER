@@ -1,2 +1,0 @@
-set(multi_map_server_MESSAGE_FILES "/home/yunlong/projects/exploration/RACER/src/uav_simulator/Utils/multi_map_server/msg/MultiOccupancyGrid.msg;/home/yunlong/projects/exploration/RACER/src/uav_simulator/Utils/multi_map_server/msg/MultiSparseMap3D.msg;/home/yunlong/projects/exploration/RACER/src/uav_simulator/Utils/multi_map_server/msg/SparseMap3D.msg;/home/yunlong/projects/exploration/RACER/src/uav_simulator/Utils/multi_map_server/msg/VerticalOccupancyGridList.msg")
-set(multi_map_server_SERVICE_FILES "")

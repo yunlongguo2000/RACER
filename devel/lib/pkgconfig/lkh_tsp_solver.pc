@@ -1,8 +1,0 @@
-prefix=/home/yunlong/projects/exploration/RACER/devel
-
-Name: lkh_tsp_solver
-Description: Description of lkh_tsp_solver
-Version: 0.0.0
-Cflags: -I/home/yunlong/projects/exploration/RACER/devel/include -I/home/yunlong/projects/exploration/RACER/src/swarm_exploration/utils/lkh_tsp_solver/include
-Libs: -L${prefix}/lib -llkh_tsp_solver
-Requires: roscpp
