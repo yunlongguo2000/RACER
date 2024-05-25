@@ -161,18 +161,47 @@ Lastly, you can use this file for exploration, as mentioned [here](#exploring-di
 
 ### Compilation issue
 
-When running this project on Ubuntu 20.04, C++14 is required. Please add the following line in all CMakelists.txt files:
+- When running this project on Ubuntu 20.04, C++14 is required. Please add the following line in all CMakelists.txt files:
 
-```
-set(CMAKE_CXX_STANDARD 14)
-```
-If you get the following error message,  please try to recompile this project with **catkin_make** .
-```
-fatal error: plan_env/ChunkStamps.h: No such file or directory
-```
+  ```
+  set(CMAKE_CXX_STANDARD 14)
+  ```
+- If you get the following error message,  please try to recompile this project with **catkin_make** .
+  ```
+  fatal error: plan_env/ChunkStamps.h: No such file or directory
+  ```
+- Sometimes Boost will report an error:
+  ```
+  /usr/include/boost/thread/pthread/thread_data.hpp:60:5: error: missing binary operator before token "("   
+  60 | #if PTHREAD_STACK_MIN > 0
+  ```
+  After trying various solutions, one that was successful is to reinstall the Boost library:
+  ```
+  wget https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
+
+  tar -xvf boost_1_78_0.tar.gz
+  cd boost_1_78_0
+
+  ./bootstrap.sh
+  ./b2
+  sudo ./b2 install
+  ```
+- Sometimes an error is reported about not finding a dynamic link library:
+  ```
+  "make[2]: *** No rule to make target '/usr/lib/x86_64-linux-gnu/libpthread.so', needed by '/home/yunlong/project/exploration/RACER/devel/lib/librviz_plugins.so'. Stop."、
+  ```
+  First, find the file location:
+  ```
+  ldconfig -p | grep libpthread
+  ```
+  Then, create a symbolic link:
+  ```
+  sudo ln -s /usr/lib/x86_64-linux-gnu/libpthread.so.0 /usr/lib/x86_64-linux-gnu/libpthread.so
+  ```
+
 ### Unexpected crash
 
-If the ```exploration_node``` dies after triggering a 2D Nav Goal, it is possibly caused by the ros-nlopt library. In this case, we recommend to uninstall it and [install nlopt following the official document](https://nlopt.readthedocs.io/en/latest/NLopt_Installation/). Then in the [CMakeLists.txt of bspline_opt package](swarm_exploration/bspline_opt/CMakeLists.txt), change the associated lines to link the nlopt library:
+If the ```exploration_node``` dies after triggering a 2D Nav Goal, it is possibly caused by the ros-nlopt library. In this case, we recommend to uninstall it and [install nlopt following the official document](https://nlopt.readthedocs.io/en/latest/NLopt_Installation/). Then in the [CMakeLists.txt of bspline_opt package](src/swarm_exploration/bspline_opt/CMakeLists.txt), change the associated lines to link the nlopt library:
 
 ```
 find_package(NLopt REQUIRED)
