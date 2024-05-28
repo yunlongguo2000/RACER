@@ -83,7 +83,6 @@ After successful installation, in the **local_sensing** package in **uav_simulat
 Then simply clone and compile our package (using ssh here):
 
 ```
-  cd ${YOUR_WORKSPACE_PATH}/src
   git clone https://github.com/yunlongguo2000/RACER.git
   cd ../ 
   catkin_make
@@ -206,6 +205,19 @@ If the ```exploration_node``` dies after triggering a 2D Nav Goal, it is possibl
 ```
 find_package(NLopt REQUIRED)
 set(NLopt_INCLUDE_DIRS ${NLOPT_INCLUDE_DIR})
+
+...
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  visualization_msgs
+  plan_env
+  active_perception
+  cv_bridge
+  NLopt
+)
 
 ...
 
