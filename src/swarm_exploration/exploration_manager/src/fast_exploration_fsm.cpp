@@ -269,6 +269,7 @@ int FastExplorationFSM::callExplorationPlanner() {
   ros::Time time_r = ros::Time::now() + ros::Duration(fp_->replan_time_);
 
   int res;
+  // In the case of obstacle avoidance and return to the starting point, exploration planning is not required
   if (fd_->avoid_collision_ || fd_->go_back_) {  // Only replan trajectory
     res = expl_manager_->planTrajToView(fd_->start_pt_, fd_->start_vel_, fd_->start_acc_,
         fd_->start_yaw_, expl_manager_->ed_->next_pos_, expl_manager_->ed_->next_yaw_);
